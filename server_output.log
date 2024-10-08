@@ -1,0 +1,16 @@
+nohup: ignoring input
+Watching for file changes with StatReloader
+[08/Oct/2024 16:52:07] "GET / HTTP/1.1" 200 1566
+[08/Oct/2024 16:52:07] "GET /static/style/style.css HTTP/1.1" 200 3205
+[08/Oct/2024 16:52:07] "GET /static/script/appointment.js HTTP/1.1" 200 4364
+Not Found: /favicon.ico
+[08/Oct/2024 16:52:07] "GET /favicon.ico HTTP/1.1" 404 3371
+[08/Oct/2024 16:52:09] "GET / HTTP/1.1" 200 1566
+[08/Oct/2024 16:52:09] "GET /static/script/appointment.js HTTP/1.1" 200 4364
+[08/Oct/2024 16:52:09] "GET /static/style/style.css HTTP/1.1" 200 3205
+Not Found: /favicon.ico
+[08/Oct/2024 16:52:10] "GET /favicon.ico HTTP/1.1" 404 3371
+[08/Oct/2024 16:52:11] "GET /get_doctors/?specialization=Dermatologia HTTP/1.1" 200 137
+[08/Oct/2024 16:52:14] "GET /get_schedules/?doctor_id=13&date=2024-10-08 HTTP/1.1" 200 159
+[08/Oct/2024 16:52:14] "GET /appointment/new/?doctor_id=13&schedule=10%3A30&date=2024-10-08 HTTP/1.1" 200 1459
+[08/Oct/2024 16:52:25] "GET / HTTP/1.1" 200 1566
