@@ -1,0 +1,48 @@
+<!-- scheduling/templates/appointments_list.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Lista de Consultas{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Consultas Agendadas</h1>
+
+<table id="appointments-table" class="display">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Médico</th>
+            <th>Especialização</th>
+            <th>Data e Hora</th>
+            <th>Motivo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in page_obj %}
+        <tr>
+            <td>{{ appointment.patient_name }}</td>
+            <td>{{ appointment.doctor.name }}</td>
+            <td>{{ appointment.doctor.specialization }}</td>
+            <td>{{ appointment.scheduled_time|date:"d/m/Y H:i" }}</td>
+            <td>{{ appointment.reason }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#appointments-table').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true
+        });
+    });
+</script>
+{% endblock %}

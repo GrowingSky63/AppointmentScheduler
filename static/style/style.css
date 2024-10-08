@@ -1,0 +1,167 @@
+:root {
+  --color-01: #52414C;
+  --color-02: #596157;
+  --color-03: #5B8C5A;
+  --color-04: #F8FAB2;
+  --color-05: #E3655B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--color-01);
+  color: var(--color-04);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+}
+
+main > *, ul li {
+  margin: 0.5em 0.5em 0 0;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#schedule-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#schedule-list ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+h1, h3 {
+  color: var(--color-05);
+  margin-top: 1em;
+}
+
+a, input[type="submit"], input[type="button"] {
+  text-decoration: none;
+  color: var(--color-04);
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+a:hover, input[type="submit"]:hover, input[type="button"]:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+a:active, input[type="submit"]:active, input[type="button"]:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-top: 0.3em;
+}
+
+select, input, textarea, button {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--color-04);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+option {
+  background-color: var(--color-01);
+  color: var(--color-04);
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Table Styling */
+#appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+#appointments-table th, #appointments-table td {
+  border: 1px solid var(--color-02);
+  padding: 10px;
+  text-align: left;
+  color: var(--color-04);
+  background-color: var(--color-01);
+}
+
+#appointments-table th {
+  background-color: var(--color-03);
+  color: var(--color-04);
+}
+
+#appointments-table tbody tr:nth-child(even) {
+  background-color: var(--color-02);
+}
+
+#appointments-table tbody tr:nth-child(odd) {
+  background-color: var(--color-01);
+}
+
+#appointments-table tbody tr:hover {
+  background-color: var(--color-03);
+}
+
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_length {
+  color: var(--color-04);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 5px;
+  color: var(--color-04);
+  padding: 5px;
+  margin: 2px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: var(--color-05);
+  color: var(--color-04);
+}

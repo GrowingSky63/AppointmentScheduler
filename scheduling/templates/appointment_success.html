@@ -1,0 +1,28 @@
+<!-- scheduling/templates/appointment_success.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Consulta Agendada{% endblock %}
+{% block extra_head %}
+{% endblock %}
+
+{% block content %}
+<h1>Sua consulta foi agendada com sucesso!</h1>
+
+<h3>Paciente:</h3>
+<p>{{ appointment.patient_name }}</p>
+
+<h3>Médico:</h3>
+<p>{{ appointment.doctor.name }}</p>
+
+<h3>Especialização:</h3>
+<p>{{ appointment.doctor.specialization }}</p>
+
+<h3>Data e Hora:</h3>
+<p>{{ appointment.scheduled_time|date:"d/m/Y H:i" }}</p>
+
+<h3>Motivo da Consulta:</h3>
+<p>{{ appointment.reason }}</p>
+
+<a href="{% url 'doctor_list' %}">Voltar à lista de médicos</a>
+{% endblock %}

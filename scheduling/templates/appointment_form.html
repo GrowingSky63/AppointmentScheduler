@@ -1,0 +1,33 @@
+<!-- scheduling/templates/appointment_form.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Agendar Consulta{% endblock %}
+{% block extra_head %}
+{% endblock %}
+
+{% block content %}
+<h1>Agendar Consulta</h1>
+<form method="post">
+    {% csrf_token %}
+    <!-- Exibir médico e horário agendado -->
+    <h3>Médico:</h3>
+    <p>{{ doctor_name }}</p>
+    
+    <h3>Data e Hora:</h3>
+    <p>{{ scheduled_time_formatted }}</p>
+    
+    <!-- Campos ocultos -->
+    {{ form.doctor }}
+    {{ form.scheduled_time }}
+    
+    <!-- Exibir o restante do formulário -->
+    <h3>Nome do Paciente:</h3>
+    <p>{{ form.patient_name }}</p>
+    
+    <h3>Motivo da Consulta:</h3>
+    <p>{{ form.reason }}</p>
+    
+    <button type="submit">Confirmar Consulta</button>
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!-- scheduling/templates/appointments.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Agendamento{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{% static 'script/appointment.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Agendar Consulta</h1>
+
+<div class="filter-container">
+    <select class="filter-input" id="filter-specialization">
+        <option value="" disabled selected hidden>Selecione a Especialização</option>
+        {% for specialization in specializations %}
+        <option value="{{ specialization }}">{{ specialization }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<div id="doctor-list"></div>
+
+<div id="date-picker" style="display: none;">
+    <p>Selecione a Data:</p>
+    <input type="text" id="selected-date">
+</div>
+
+<div id="schedule-list"></div>
+{% endblock %}
